@@ -16,10 +16,13 @@ def write_http(request):
 
 
 def write_legacy_event(data, context):
+    if type(data) is bytes:
+        data = json.loads(data.decode())
+
     _write_output(
         json.dumps(
             {
-                "data": data,
+                "data": data.decode(),
                 "context": {
                     "eventId": context.event_id,
                     "timestamp": context.timestamp,
