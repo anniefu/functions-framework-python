@@ -24,7 +24,7 @@ jobs:
         go-version: '1.16'
 
     - name: Run HTTP conformance tests
-      uses: GoogleCloudPlatform/functions-framework-conformance/action@v1.1.0
+      uses: anniefu/functions-framework-conformance/action@goClone
       with:
         version: 'v1.1.0'
         functionType: 'http'
@@ -33,7 +33,7 @@ jobs:
         cmd: "'functions-framework --source tests/conformance/main.py --target write_http --signature-type http'"
 
     - name: Run event conformance tests
-      uses: GoogleCloudPlatform/functions-framework-conformance/action@v1.1.0
+      uses: anniefu/functions-framework-conformance/action@goClone
       with:
         version: 'v1.1.0'
         functionType: 'legacyevent'
@@ -42,7 +42,7 @@ jobs:
         cmd: "'functions-framework --source tests/conformance/main.py --target write_legacy_event --signature-type event'"
 
     - name: Run cloudevent conformance tests
-      uses: GoogleCloudPlatform/functions-framework-conformance/action@v1.1.0
+      uses: anniefu/functions-framework-conformance/action@goClone
       with:
         version: 'v1.1.0'
         functionType: 'cloudevent'
